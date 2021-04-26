@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.FormularioDispositivosController">
+	<top>
+		<MenuBar BorderPane.alignment="CENTER">
+			<menus>
+				<Menu mnemonicParsing="false" text="Dispositivos">
+					<items>
+						<MenuItem mnemonicParsing="false" onAction="#vistaDispositivo" text="Gestionar Dispositivos" />
+					</items>
+				</Menu>
+				<Menu mnemonicParsing="false" text="Acciones">
+					<items>
+						<MenuItem mnemonicParsing="false" text="Acciones con Dispositivos" />
+					</items>
+					<items>
+						<MenuItem mnemonicParsing="false" text="Acciones Externas al Dispositivo" />
+					</items>
+				</Menu>
+				<Menu mnemonicParsing="false" text="Reportes">
+					<items>
+						<MenuItem mnemonicParsing="false" text="Bitácora" />
+					</items>
+					<items>
+						<MenuItem mnemonicParsing="false" text="Dispositivos asociados a cada usuario" />
+					</items>
+					<items>
+						<MenuItem mnemonicParsing="false" text="Bitácora de ingreso al programa" />
+					</items>
+					<items>
+						<MenuItem mnemonicParsing="false" text="Reporte de archivos almacenados en dispositivos" />
+					</items>
+				</Menu>
+				<Menu mnemonicParsing="false" text="Usuarios">
+					<items>
+						<MenuItem mnemonicParsing="false" text="Gestionar usuarios" />
+					</items>
+				</Menu>
+			</menus>
+		</MenuBar>
+	</top>
+	<bottom>
+		<HBox prefHeight="54.0" prefWidth="600.0" spacing="12.0" BorderPane.alignment="CENTER">
+			<children>
+				<Button fx:id="btnCrearDispositivo" mnemonicParsing="false" onAction="#crearDispositivo" text="Crear dispositivo" />
+				<Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#eliminarRegistroDispositivo" text="Eliminar dispositivo" />
+				<Button mnemonicParsing="false" text="Carga masiva dispositivo" />
+				<Button mnemonicParsing="false" onAction="#limpiarComponentes" text="Carga masiva administración" />
+			</children>
+		</HBox>
+	</bottom>
+	<center>
+		<TableView fx:id="tblViewDispositivos" onSort="#vistaDispositivo" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+			<columns>
+				<TableColumn fx:id="clmTipoDispositivo" prefWidth="145.0" text="Tipo" />
+				<TableColumn fx:id="clmNumeroTelefono" prefWidth="71.0" text="Telefono" />
+				<TableColumn fx:id="clmDispositivoAsociado" prefWidth="74.0" text="Asociado" />
+				<TableColumn fx:id="clmCorreoElectronico" prefWidth="133.0" text="Correo" />
+				<TableColumn fx:id="clmNombreDispositivo" prefWidth="137.0" text="Nombre" />
+				<TableColumn fx:id="clmVisible" prefWidth="63.0" text="Visible" />
+				<TableColumn fx:id="clmEstado" prefWidth="76.0" text="Estado" />
+			</columns>
+		</TableView>
+	</center>
+
+</BorderPane>
